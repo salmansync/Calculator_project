@@ -19,14 +19,12 @@ class CalculatorViewModel : ViewModel(){
         Log.i("Clicked Button", btn)
 
         _equationText.value?.let {
-            // FIX: "C" now acts as the full reset (AC) since AC was removed from your button list
             if(btn=="C"){
                 _equationText.value = ""
                 _resultText.value = "0"
                 return
             }
 
-            // FIX: Checked for the new backspace symbol "⌫" instead of "C"
             if(btn=="⌫"){
                 if(it.isNotEmpty()){
                     _equationText.value = it.substring(0,it.length-1)
@@ -41,7 +39,6 @@ class CalculatorViewModel : ViewModel(){
 
             _equationText.value = it+btn
 
-            //Calculate Result
             try {
                 _resultText.value = calculateResult(_equationText.value.toString())
             }catch (_ : Exception){}
@@ -54,7 +51,7 @@ class CalculatorViewModel : ViewModel(){
         context.optimizationLevel = -1
         val scriptable : Scriptable  = context.initStandardObjects()
 
-        // FIX: Replace UI operators ('÷' and 'x') with valid math symbols ('/' and '*') for Rhino engine evaluation
+
         var validEquation = equation.replace("÷", "/").replace("x", "*")
 
         var finalResult = context.evaluateString(scriptable,validEquation,"Javascript",1,null).toString()
