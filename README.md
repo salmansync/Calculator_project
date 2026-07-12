@@ -317,8 +317,8 @@ After preprocessing, the expression is evaluated using the **Mozilla Rhino JavaS
 
 ## 📦 Download APK
 
-The latest debug APK has been generated and can be found here:
-[app-debug.apk](app/build/outputs/apk/debug/app-debug.apk)
+The latest debug APK is available here:
+[Calculator-v1.0-debug.apk](release/Calculator-v1.0-debug.apk)
 
 ---
 
