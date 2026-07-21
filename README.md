@@ -56,8 +56,8 @@ Supports all basic arithmetic operations.
 Supports
 
 - Square Root (√)
-- Power (x^y)
-- Reciprocal (1/x)
+- Power (Xʸ)
+- Reciprocal (¹/ₓ)
 - Percentage (%)
 - Modulus (MOD)
 - Parentheses (())
@@ -291,8 +291,8 @@ Before evaluation, the calculator converts user-friendly mathematical symbols in
 | × | * |
 | ÷ | / |
 | √ | Math.sqrt() |
-| x^y | ** |
-| 1/x | 1 / (...) |
+| Xʸ | ** |
+| ¹/ₓ | 1 / (...) |
 | MOD | JavaScript Modulus Operator |
 | % | Custom Percentage Processing |
 
@@ -321,7 +321,7 @@ After preprocessing, the expression is evaluated using the **Mozilla Rhino JavaS
 ## 📦 Download APK
 
 The latest debug APK is available here:
-[Calculator-v1.1-debug.apk](release/Calculator-v1.1-debug.apk)
+[Calculator-v1.3-debug.apk](release/Calculator-v1.3-debug.apk)
 
 ---
 

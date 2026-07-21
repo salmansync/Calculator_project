@@ -97,7 +97,7 @@ class CalculatorViewModel : ViewModel() {
                 isNewCalculation = false
                 typeSmartly(currentEq, if (lastAnswer.startsWith("-")) "($lastAnswer)" else lastAnswer, lastChar)
             }
-            "x^y" -> {
+            "Xʸ", "^" -> {
                 isNewCalculation = false
                 if (currentEq.isNotEmpty() && !endsWithOperator(currentEq) && lastChar != '(') {
                     _equationText.value = currentEq + "^"
@@ -118,7 +118,7 @@ class CalculatorViewModel : ViewModel() {
                     typeSmartly(currentEq, "(", lastChar)
                 }
             }
-            "1/x" -> {
+            "¹/ₓ" -> {
                 isNewCalculation = false
                 if (currentEq.isNotEmpty()) {
                     _equationText.value = "1÷($currentEq)"

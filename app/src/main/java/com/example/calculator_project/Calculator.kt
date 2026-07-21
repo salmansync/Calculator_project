@@ -27,8 +27,8 @@ import androidx.compose.ui.unit.sp
 
 // This list defines the exact layout of the 24 buttons (4 columns x 6 rows)
 val standardButtons = listOf(
-    "√", "x^y", "C", "⌫",
-    "()", "1/x", "%", "÷",
+    "√", "Xʸ", "C", "⌫",
+    "()", "¹/ₓ", "%", "÷",
     "7", "8", "9", "x",
     "4", "5", "6", "-",
     "1", "2", "3", "+",
