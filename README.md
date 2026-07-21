@@ -6,402 +6,114 @@
 ![Architecture](https://img.shields.io/badge/Architecture-MVVM-orange?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-Apache%202.0-green?style=for-the-badge)
 
-A modern, feature-rich Android Calculator built using **Kotlin**, **Jetpack Compose**, and **MVVM Architecture**. The application offers real-time calculation, advanced mathematical operations, smart expression processing, calculation history, theme switching, keyboard support, and a clean Material Design 3 interface.
+A modern, professional-grade Android Calculator built using **Kotlin**, **Jetpack Compose**, and **MVVM Architecture**. This app mimics real scientific calculator behavior with advanced symbol support, smart bracket logic, and real-time evaluation.
 
 ---
 
 # 📱 Overview
 
-This project demonstrates modern Android development practices using **Jetpack Compose**, **MVVM Architecture**, and **LiveData**.
+This project showcases modern Android development practices, emphasizing a reactive UI and robust mathematical logic. 
 
-Instead of creating a mathematical parser from scratch, the calculator integrates the **Mozilla Rhino JavaScript Engine** for evaluating mathematical expressions while applying custom preprocessing for advanced features such as **Percentage**, **MOD**, **Power**, and **Square Root**.
+By integrating the **Mozilla Rhino JavaScript Engine**, the calculator handles complex expressions with ease. Custom preprocessing ensures that user-friendly symbols like **Xʸ**, **¹/ₓ**, and **√** are evaluated with high precision, while smart logic handles common user typing patterns automatically.
 
 ## Highlights
 
-- ⚡ Real-Time Result
-- 📐 Advanced Mathematics
-- 🧠 Smart Expression Processing
-- 🌙 Dark & Light Mode
-- 📜 Calculation History
-- 🔋 ON/OFF Functionality
-- 🔄 ANS Memory
-- ⌨️ Physical Keyboard Support
-- 📱 Responsive Material Design UI
+- ⚡ **Real-Time Evaluation:** See results instantly as you type.
+- 📐 **Scientific Symbols:** Professional UI using `Xʸ` (Power) and `¹/ₓ` (Reciprocal).
+- 🧠 **Smart Dynamic Brackets:** A single `()` button that intelligently opens or closes brackets.
+- 🌙 **Adaptive Themes:** Seamless switching between Dark and Light modes.
+- 📜 **Session History:** Access a full log of your current session's calculations.
+- 🔋 **Power Toggle:** Dedicated ON/OFF functionality to preserve state or clear memory.
+- ⌨️ **Keyboard Optimization:** Full support for physical external keyboards.
 
 ---
 
 # 📸 Screenshots
 
-|           Light Mode            | Dark Mode | History |
-|:-------------------------------:|:----------:|:----------:|
+| Light Mode | Dark Mode | History |
+|:---:|:---:|:---:|
 | ![](docs/screenshots/light.png) | ![](docs/screenshots/dark.png) | ![](docs/screenshots/history.png) |
 
 ---
 
 # ✨ Features
 
-## 🧮 Standard Calculator
+## 🧮 Advanced Mathematical Operations
 
-Supports all basic arithmetic operations.
+Beyond standard arithmetic, the app supports:
 
-- ➕ Addition
-- ➖ Subtraction
-- ✖️ Multiplication
-- ➗ Division
-
----
-
-## 📐 Advanced Mathematics
-
-Supports
-
-- Square Root (√)
-- Power (Xʸ)
-- Reciprocal (¹/ₓ)
-- Percentage (%)
-- Modulus (MOD)
-- Parentheses (())
-- Decimal Numbers
+- **Power (Xʸ):** Raise numbers to any power effortlessly.
+- **Reciprocal (¹/ₓ):** Instantly calculate the inverse of your current expression.
+- **Square Root (√):** Clean visual representation of root calculations.
+- **Modulo (MOD):** Dedicated remainder operator for advanced math.
+- **Smart Percentages (%):** Handles context-aware percentage math (e.g., `200 + 10% = 220`).
 
 ---
 
-## ⚡ Real-Time Calculation
+## 🧠 Intelligence & UX
 
-The calculator evaluates expressions while typing and instantly displays the current result without pressing the **Equals (=)** button.
+### Smart Dynamic Brackets `()`
+No need for two separate buttons. Our intelligent logic:
+- **Opens** a bracket if the expression is empty or ends with an operator.
+- **Closes** the nearest bracket if there's an unclosed pair and the last input was a number or `)`.
+- **Auto-completes** missing closing brackets upon evaluation to prevent errors.
 
----
-
-## 🧠 Smart Expression Processing
-
-The calculator intelligently processes user input before evaluation.
-
-### Features
-
-- Smart Operator Validation
-- Automatic Multiplication
-- Combined `()` Bracket Logic
-- Automatic Bracket Completion
-- Decimal Validation
-- Smart Percentage Logic
-- Independent MOD Operation
-- Expression Conversion
-- Real-Time Evaluation
+### Implicit Multiplication
+The app understands mathematical shorthand:
+- `5(2)` becomes `5 × (2)`
+- `9ANS` becomes `9 × ANS`
+- `(2)(3)` becomes `(2) × (3)`
 
 ---
 
-## 🔁 Auto Multiplication
+## ⌨️ Physical Keyboard Mapping
 
-Automatically inserts multiplication where needed.
-
-Example
-
-```text
-(5)2
-```
-
-becomes
-
-```text
-(5)×2
-```
-
----
-
-## 📊 Smart Percentage Logic
-
-Percentage calculations behave similarly to real scientific calculators.
-
-Example
-
-```text
-100 - 20%
-```
-
-Result
-
-```text
-80
-```
-
----
-
-## 🧮 MOD Operation
-
-Supports a dedicated **MOD** operator.
-
-Example
-
-```text
-10 MOD 3
-```
-
-Result
-
-```text
-1
-```
-
-Unlike Percentage, **MOD is processed independently**, ensuring accurate calculations without conflicts.
-
----
-
-## 🔄 ANS Memory
-
-Reuse the previous calculation instantly.
-
-Example
-
-```text
-20 + 30 = 50
-
-ANS + 10
-
-Result = 60
-```
-
----
-
-## 📜 Calculation History
-
-- Stores every successful calculation
-- Scrollable History Dialog
-- View previous calculations anytime
-
----
-
-## 🌙 Dark / Light Mode
-
-Switch instantly between
-
-- 🌞 Light Mode
-- 🌙 Dark Mode
-
-The UI updates dynamically using Jetpack Compose State Management.
-
----
-
-## 🔋 ON / OFF Button
-
-Behaves like a real calculator.
-
-Features
-
-- Turn Calculator ON/OFF
-- Disable Input
-- Clear Display
-- Reset Current State
-
----
-
-## ⌨️ Physical Keyboard Support
-
-Supports external keyboards for faster input.
+For power users with external keyboards:
 
 | Key | Action |
 |------|--------|
-| 0–9 | Number Input |
-| + | Addition |
-| - | Subtraction |
-| * / X | Multiplication |
-| / | Division |
-| Enter | Calculate |
-| = | Calculate |
-| Backspace | Delete Last Character |
-| Delete | Delete Last Character |
-| Esc | Clear Calculator |
-| S | Square Root (√) |
-| M | MOD |
-| ^ | Power |
-| % | Percentage |
+| `0–9` | Number Input |
+| `+` `-` `*` `/` | Standard Arithmetic |
+| `^` | Power (`Xʸ`) |
+| `Enter` / `=` | Final Calculation |
+| `Backspace` / `Del` | Delete last character |
+| `Esc` / `C` | Clear All |
+| `S` | Square Root (`√`) |
+| `M` | Modulo (`MOD`) |
+| `%` | Percentage |
 
 ---
 
-## 🚫 Error Handling
+# 🧩 Architecture & Stack
 
-Safely handles
-
-- Invalid Expressions
-- Division by Zero
-- Infinity
-- NaN
-- Missing Parentheses
-
-Instead of crashing, the application displays a user-friendly error.
-
----
-
-# 🏗️ Project Structure
-
-```text
-Calculator_project
-│
-├── app/
-│
-├── docs/
-│   └── screenshots/
-│       ├── light.png
-│       ├── dark.png
-│       └── history.png
-│
-├── README.md
-├── LICENSE
-│
-└── Gradle Files
-```
-
----
-
-# 🧩 Architecture
-
-The project follows the **MVVM (Model-View-ViewModel)** Architecture.
-
-```text
-           User
-             │
-             ▼
-      Jetpack Compose UI
-             │
-             ▼
-        Calculator.kt
-             │
-             ▼
-   CalculatorViewModel
-             │
-             ▼
- Mozilla Rhino JavaScript Engine
-             │
-             ▼
- Mathematical Expression Evaluation
-             │
-             ▼
-         LiveData Update
-             │
-             ▼
-          UI Refresh
-```
-
----
-
-# ⚙️ Mathematical Processing
-
-Before evaluation, the calculator converts user-friendly mathematical symbols into Rhino-compatible expressions.
-
-| User Input | Internal Conversion |
-|------------|---------------------|
-| × | * |
-| ÷ | / |
-| √ | Math.sqrt() |
-| Xʸ | ** |
-| ¹/ₓ | 1 / (...) |
-| MOD | JavaScript Modulus Operator |
-| % | Custom Percentage Processing |
-
-After preprocessing, the expression is evaluated using the **Mozilla Rhino JavaScript Engine**.
-
----
-
-# 🛠️ Technology Stack
-
-| Technology | Purpose |
-|------------|---------|
-| Kotlin | Programming Language |
-| Android Studio | Development Environment |
-| Jetpack Compose | Modern UI Development |
-| Material Design 3 | UI Components |
-| MVVM | Architecture Pattern |
-| ViewModel | Business Logic |
-| LiveData | State Management |
-| Mozilla Rhino | Mathematical Expression Evaluation |
-| Regex | Expression Parsing & Validation |
+- **Pattern:** MVVM (Model-View-ViewModel) for clean separation of concerns.
+- **UI:** Jetpack Compose (Material 3) for a modern, declarative interface.
+- **Engine:** Mozilla Rhino (JS Engine) for reliable mathematical evaluation.
+- **State:** LiveData & Compose State for reactive UI updates.
 
 ---
 
 # 🚀 Getting Started
 
 ## 📦 Download APK
+Get the latest stable build directly:
+[**Download Calculator v1.3 APK**](release/Calculator-v1.3-debug.apk)
 
-The latest debug APK is available here:
-[Calculator-v1.3-debug.apk](release/Calculator-v1.3-debug.apk)
-
----
-
-## Clone Repository
-
-```bash
-git clone https://github.com/salmansync/Calculator_project.git
-```
-
----
-
-## Open Project
-
-Open the project in **Android Studio Ladybug** or newer.
-
----
-
-## Sync Gradle
-
-Allow Android Studio to download all dependencies.
-
----
-
-## Run
-
-- Connect an Android device
-
-or
-
-- Launch an Android Emulator
-
-Click the **▶ Run** button.
-
----
-
-# 📦 Dependencies
-
-```gradle
-implementation("androidx.compose.material3:material3")
-implementation("androidx.lifecycle:lifecycle-viewmodel-ktx")
-implementation("androidx.lifecycle:lifecycle-livedata-ktx")
-implementation("org.mozilla:rhino")
-```
-
----
-
-# 🚀 Future Improvements
-
-- Scientific Calculator Mode
-- Trigonometric Functions
-- Logarithmic Functions
-- Hyperbolic Functions
-- Unit Converter
-- Currency Converter
-- Memory Functions (M+, M-, MR, MC)
-- Better Animations
-- Landscape Layout
-- Tablet Optimization
-- Calculation Export
+## Development Setup
+1. **Clone:** `git clone https://github.com/salmansync/Calculator_project.git`
+2. **Open:** Android Studio Ladybug (2024.2.1) or newer.
+3. **Build:** Sync Gradle and click the **Run** icon.
 
 ---
 
 # 👨‍💻 Author
 
 **Salman Farsi**
-
-GitHub: https://github.com/salmansync
-
----
-
-# ⭐ Support
-
-If you like this project, please consider giving it a **⭐ Star** on GitHub.
-
-Your support motivates future improvements and new open-source projects.
+- GitHub: [@salmansync](https://github.com/salmansync)
 
 ---
 
 # 📄 License
 
 This project is licensed under the **Apache License 2.0**.
-
-See the **LICENSE** file for more information.
+See the [LICENSE](LICENSE) file for details.
