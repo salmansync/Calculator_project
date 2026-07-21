@@ -97,6 +97,19 @@ class CalculatorViewModel : ViewModel() {
                 isNewCalculation = false
                 typeSmartly(currentEq, if (lastAnswer.startsWith("-")) "($lastAnswer)" else lastAnswer, lastChar)
             }
+            "x^y" -> {
+                isNewCalculation = false
+                if (currentEq.isNotEmpty() && !endsWithOperator(currentEq) && lastChar != '(') {
+                    _equationText.value = currentEq + "^"
+                }
+            }
+            "1/x" -> {
+                isNewCalculation = false
+                if (currentEq.isNotEmpty()) {
+                    _equationText.value = "1÷($currentEq)"
+                    evaluateRealTime(_equationText.value!!)
+                }
+            }
             "√" -> {
                 isNewCalculation = false
                 // Now it only types "√" on the screen, keeping the UI clean!

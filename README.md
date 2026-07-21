@@ -56,7 +56,8 @@ Supports all basic arithmetic operations.
 Supports
 
 - Square Root (√)
-- Power (^)
+- Power (x^y)
+- Reciprocal (1/x)
 - Percentage (%)
 - Modulus (MOD)
 - Parentheses ( )
@@ -289,7 +290,8 @@ Before evaluation, the calculator converts user-friendly mathematical symbols in
 | × | * |
 | ÷ | / |
 | √ | Math.sqrt() |
-| ^ | ** |
+| x^y | ** |
+| 1/x | 1 / (...) |
 | MOD | JavaScript Modulus Operator |
 | % | Custom Percentage Processing |
 
