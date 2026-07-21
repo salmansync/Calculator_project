@@ -28,7 +28,7 @@ import androidx.compose.ui.unit.sp
 // This list defines the exact layout of the 24 buttons (4 columns x 6 rows)
 val standardButtons = listOf(
     "√", "x^y", "C", "⌫",
-    "(", ")", "%", "÷",
+    "()", "1/x", "%", "÷",
     "7", "8", "9", "x",
     "4", "5", "6", "-",
     "1", "2", "3", "+",
@@ -138,7 +138,6 @@ fun Calculator(modifier: Modifier = Modifier, viewModel: CalculatorViewModel) {
             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
                 ControlRowButton("History", btnBg, btnTxt) { showHistory = true }
                 ControlRowButton("MOD", btnBg, btnTxt) { viewModel.onButtonClick("MOD") }
-                ControlRowButton("1/x", btnBg, btnTxt) { viewModel.onButtonClick("1/x") }
                 ControlRowButton(if (isDarkMode) "☀️" else "🌙", btnBg, btnTxt) { isDarkMode = !isDarkMode }
                 // ON/OFF now at the right corner with dynamic colors
                 ControlRowButton("ON/OFF", powerBtnBg, Color.White) { viewModel.onButtonClick("ON/OFF") }

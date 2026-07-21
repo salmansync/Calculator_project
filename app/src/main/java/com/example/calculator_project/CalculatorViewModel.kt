@@ -103,6 +103,21 @@ class CalculatorViewModel : ViewModel() {
                     _equationText.value = currentEq + "^"
                 }
             }
+            "()" -> {
+                isNewCalculation = false
+                val open = currentEq.count { it == '(' }
+                val close = currentEq.count { it == ')' }
+                if (open > close && (lastChar?.isDigit() == true || lastChar == ')' || lastChar == '%' || currentEq.endsWith(lastAnswer))) {
+                    if (lastChar == '(' || endsWithOperator(currentEq)) {
+                        typeSmartly(currentEq, "(", lastChar)
+                    } else {
+                        _equationText.value = currentEq + ")"
+                        evaluateRealTime(_equationText.value!!)
+                    }
+                } else {
+                    typeSmartly(currentEq, "(", lastChar)
+                }
+            }
             "1/x" -> {
                 isNewCalculation = false
                 if (currentEq.isNotEmpty()) {

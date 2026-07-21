@@ -60,7 +60,7 @@ Supports
 - Reciprocal (1/x)
 - Percentage (%)
 - Modulus (MOD)
-- Parentheses ( )
+- Parentheses (())
 - Decimal Numbers
 
 ---
@@ -79,6 +79,7 @@ The calculator intelligently processes user input before evaluation.
 
 - Smart Operator Validation
 - Automatic Multiplication
+- Combined `()` Bracket Logic
 - Automatic Bracket Completion
 - Decimal Validation
 - Smart Percentage Logic
@@ -320,7 +321,7 @@ After preprocessing, the expression is evaluated using the **Mozilla Rhino JavaS
 ## 📦 Download APK
 
 The latest debug APK is available here:
-[Calculator-v1.0-debug.apk](release/Calculator-v1.0-debug.apk)
+[Calculator-v1.1-debug.apk](release/Calculator-v1.1-debug.apk)
 
 ---
 
